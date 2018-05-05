@@ -1,0 +1,172 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*--------------------
+    BODY SECTION
+----------------------*/
+body {
+    font-family: 'Lato', sans-serif;
+    color: gray;
+    
+}
+.container {
+    padding: 1.5rem 0;
+    margin-top:50px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+/*--------------------
+    WIN COUNTER AND 
+    TURN SECTION
+----------------------*/
+.win-counter {
+    width: 100%;
+    margin-bottom: 0.5rem;
+}
+
+.winner {
+    font-size: 1.8rem;
+    width: 150px;
+    border: 1px solid #cbcbcb;
+    box-shadow: 1px 1px 7px #cbcbcb;
+    height: 30px;
+    color: black;
+    display: inline-block;
+    margin-right: 1.125rem;
+    position: relative;
+    transition: border 0.2s ease-in-out;
+}
+#x-wins, #o-wins{
+    position: absolute;
+    right: 5px;
+    top: 2px;
+    font-size: 1.25rem;
+    color: gray;
+    padding-left: 5px;
+    border-left: 1px dashed #cbcbcb;
+}
+.player {
+    position: absolute;
+    top: -0.4rem;
+    left: 0.425rem;
+}
+#whos-turn {
+    min-height: 2rem;
+}
+.tag-x, .tag-o {
+    position: relative;
+    top: -30px;
+}
+.tag-x{
+    color: #555;
+    font-size: 110px;
+}
+.tag-o{
+    top: -28px;
+    font-size: 85px;
+    color: #faebd3;
+}
+/*--------------------
+    BOARD SECTION
+----------------------*/
+.board-wrapper {
+    width: 100%;
+    background-color: #14bdac;
+    min-height: 370px;
+    padding-top: 0;
+}
+#board {
+    padding: 2rem;
+    margin-bottom: 1rem;
+}
+.pole-gry {
+    width: 100px;
+    height: 100px;
+    border: 3px solid #09a192;
+    display: inline-block;
+    font-size: 100px;
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+.pole-gry:first-of-type {
+    border-top: none;
+    border-left: none;
+}
+.pole-gry:nth-of-type(2) {
+    border-top: none;
+}
+.pole-gry:nth-of-type(3) {
+    border-right: none;
+    border-top: none;
+}
+.pole-gry:nth-of-type(5) {
+    border-left: none;
+}
+.pole-gry:nth-of-type(7) {
+    border-right: none;
+}
+.pole-gry:nth-of-type(9) {
+    border-left: none;
+    border-bottom: none;
+}
+.pole-gry:nth-of-type(10) {
+    border-bottom: none;
+}
+.pole-gry:nth-of-type(11) {
+    border-right: none;
+    border-bottom: none;
+}
+strong {
+    font-size: 1.125rem;
+}
+
+/*--------------------
+ RESTART GAME SECTION
+----------------------*/
+#restart-game {
+    width: 100%;
+}
+#restart-game h1 {
+    font-size: 1.375rem;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    text-transform: uppercase;
+    color: #14bdac;
+    border-radius: 5px;
+    width: 300px;
+    padding: 0.75rem 1.25rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+#restart-game h1:hover {
+    color: white;
+    background-color: #09a192;
+    
+}
+h1.koniec, h1.remis {
+    font-size: 3rem;
+    color: #555;
+}
+h1.koniec{
+    margin-top: 80px;
+    margin-bottom: 10px;
+}
+h1.remis {
+    margin: 0;
+    padding: 123px;
+}
+h1#wygrany {
+    font-size: 9rem;
+    margin-top: -45px;
+}
+
