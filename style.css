@@ -19,10 +19,11 @@ body {
     position: relative;
 }
 .middle {
+    width: 100%;
     position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateY(-50%);
+    
 }
 /*--------------------
     WIN COUNTER AND 
@@ -180,13 +181,13 @@ h1#wygrany {
 ----------------------*/
 .lang-change {
     width: 7.5rem;
-    height: 1.875rem;
+    height: 2.275rem;
     background-color: #14bdac;
     position: fixed;
     top: 0.3125rem;
     right: 0.3125rem;
     border-radius: 0.625rem;
-    padding: 0.3125rem 0.625rem;
+    padding: 0.4125rem 0.625rem;
     color: #faebd3;
     font-size: 1.65rem;
     cursor: pointer;
@@ -201,15 +202,36 @@ h1#wygrany {
 }
 .lang-change p {
     position: relative;
-    top: -6px;
+    top: -7px;
     left: 5px;
 }
 
 @media (min-width: 500px) {
-    .board-wrapper {
-        width: 100vw;
+    .middle {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .lang-change {
+        width: 7.5rem;
+        height: 1.875rem;
         background-color: #14bdac;
-        min-height: 370px;
-        padding-top: 0;
+        position: fixed;
+        top: 0.3125rem;
+        right: 0.3125rem;
+        border-radius: 0.625rem;
+        padding: 0.3125rem 0.625rem;
+        color: #faebd3;
+        font-size: 1.65rem;
+        cursor: pointer;
+        border: 1px solid #09a192;
+    }
+
+    .lang-change img {
+        width: 2.5rem;
+        height: 1.25rem;
+        border-radius: 10%;
+        float: left;
     }
 }
