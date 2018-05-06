@@ -208,3 +208,7 @@ h1#wygrany {
     top: -6px;
     left: 5px;
 }
+
+@media (min-width: 500px) {
+    
+}

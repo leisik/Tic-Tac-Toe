@@ -55,12 +55,12 @@ window.onload = setBoard;
 function changeLanguage() {
     lang = !lang;
     if(!lang){
-        document.querySelector('.lang-change').innerHTML = '                <img src="flagauk.png" alt="flaga Wielkiej Brytani"><p>ENG</p>';
+        document.querySelector('.lang-change').innerHTML = '<img src="flagauk.png" alt="flaga Wielkiej Brytani"><p>ENG</p>';
         document.querySelector('#restart-game').innerHTML = '<h1>restart</h1>';
         document.querySelector('#whos-turn').innerHTML = '<p>Start the game or choose player</p>';
     }
     else {
-        document.querySelector('.lang-change').innerHTML = '                <img src="flagapl.jpg" alt="flaga polski"><p>PL</p>';
+        document.querySelector('.lang-change').innerHTML = '<img src="flagapl.jpg" alt="flaga polski"><p>PL</p>';
         document.querySelector('#restart-game').innerHTML = '<h1>zacznij od nowa</h1>';
         document.querySelector('#whos-turn').innerHTML = '<p>Rozpocznij grę lub wybierz gracza</p>';
     }
