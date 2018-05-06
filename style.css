@@ -179,8 +179,8 @@ h1#wygrany {
  CHANGE LANGUAGE SECTION
 ----------------------*/
 .lang-change {
-    width: 7.5rem;
-    height: 1.875rem;
+    width: 15rem;
+    height: 7.5rem;
     background-color: #14bdac;
     position: fixed;
     top: 0.3125rem;
