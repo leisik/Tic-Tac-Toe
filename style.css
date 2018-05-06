@@ -169,4 +169,32 @@ h1#wygrany {
     font-size: 9rem;
     margin-top: -45px;
 }
+/*--------------------
+ CHANGE LANGUAGE SECTION
+----------------------*/
+.lang-change {
+    width: 120px;
+    height: 30px;
+    background-color: #14bdac;
+    position: fixed;
+    top: 5px;
+    right: 5px;
+    border-radius: 10px;
+    padding: 5px 10px;
+    color: #faebd3;
+    font-size: 1.65rem;
+    cursor: pointer;
+    border: 1px solid #09a192;
+}
 
+.lang-change img {
+    width: 40px;
+    height: 20px;
+    border-radius: 10%;
+    float: left;
+}
+.lang-change p {
+    position: relative;
+    top: -6px;
+    left: 5px;
+}

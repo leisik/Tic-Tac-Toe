@@ -6,7 +6,10 @@ var endGame = 0;
 var plansza = []; // 2 - x, 3 - o
 var wygrany = "";
 var moves = 0; // number of moves made during game
+var lang = true; // false - pl
 
+var langChange = document.querySelector('.lang-change');
+langChange.addEventListener("click", function () { changeLanguage(); });
 var restartBtn = document.getElementById('restart-game');
 restartBtn.addEventListener("click", function() { restart(); });
 var chooseCharacterBtn = document.querySelector('.o-border');
@@ -49,12 +52,34 @@ function setBoard() {
 
 window.onload = setBoard;
 
+function changeLanguage() {
+    lang = !lang;
+    if(!lang){
+        document.querySelector('.lang-change').innerHTML = '                <img src="flagauk.png" alt="flaga Wielkiej Brytani"><p>ENG</p>';
+        document.querySelector('#restart-game').innerHTML = '<h1>restart</h1>';
+        document.querySelector('#whos-turn').innerHTML = '<p>Start the game or choose player</p>';
+    }
+    else {
+        document.querySelector('.lang-change').innerHTML = '                <img src="flagapl.jpg" alt="flaga polski"><p>PL</p>';
+        document.querySelector('#restart-game').innerHTML = '<h1>zacznij od nowa</h1>';
+        document.querySelector('#whos-turn').innerHTML = '<p>Rozpocznij grę lub wybierz gracza</p>';
+    }
+    restart();
+}
 
 function whichOne(nr) {
     if(moves < 8) {
+        var turn = "";
+        if(!lang){
+            turn = '<p>Your turn: <strong>o</strong></p>';
+        }
+        else {
+            turn = '<p>Teraz ruch ma: <strong>o</strong></p>';
+        }
+        
         if(!yourTurn){
             document.getElementById('p' + nr).innerHTML = '<span class="tag-x">x</span>';
-            document.getElementById('whos-turn').innerHTML = '<p>Teraz ruch ma: <strong>o</strong></p>';
+            document.getElementById('whos-turn').innerHTML = turn;
             document.querySelector('.o-border').style.borderBottom = "2px solid #14bdac";
             document.querySelector('.x-border').style.borderBottom = "1px solid #cbcbcb";
             plansza[nr] = 0;
@@ -62,7 +87,7 @@ function whichOne(nr) {
         }
         else{
             document.getElementById('p' + nr).innerHTML = '<span class="tag-o"><i class="far fa-circle fa-xs"></i></span>';
-            document.getElementById('whos-turn').innerHTML = '<p>Teraz ruch ma: <strong>x</strong></p>';
+            document.getElementById('whos-turn').innerHTML = turn;
             document.querySelector('.x-border').style.borderBottom = "2px solid #14bdac";
             document.querySelector('.o-border').style.borderBottom = "1px solid #cbcbcb";
             plansza[nr] = 1;
@@ -72,12 +97,28 @@ function whichOne(nr) {
             //console.log(plansza[nr]);
         isWin();
         if(endGame){
-            if(yourTurn) { wygrany = '<i class="far fa-circle fa-xs"></i>'; }
-            else { wygrany = "x"; }
-            var html = "";
-            html += '<h1 class="koniec">WYGRAŁY: </h1>';
-            html += '<h1 id="wygrany">' + wygrany + '</h1>';
-            document.getElementById('board').innerHTML = html;
+            if(yourTurn) { 
+                wygrany = '<i class="far fa-circle fa-xs"></i>'; 
+            }
+            else { 
+                wygrany = "x"; 
+            }
+            
+            if(!lang) {
+                var html = "";
+                html += '<h1 class="koniec">WINNER: </h1>';
+                html += '<h1 id="wygrany">' + wygrany + '</h1>';
+                document.getElementById('board').innerHTML = html;
+                document.querySelector('#whos-turn').innerHTML = '<p>Game over<p>';
+            }
+            else {
+                var html = "";
+                html += '<h1 class="koniec">WYGRAŁY: </h1>';
+                html += '<h1 id="wygrany">' + wygrany + '</h1>';
+                document.getElementById('board').innerHTML = html;
+                document.querySelector('#whos-turn').innerHTML = '<p>Koniec gry<p>';
+            }
+
             if(wygrany == 'x') {
                 document.getElementById('wygrany').style.color = "#555";
                 xWins++;
@@ -86,7 +127,6 @@ function whichOne(nr) {
                 document.getElementById('wygrany').style.color = "#faebd3";
                 oWins++;
             }
-            document.querySelector('#whos-turn').innerHTML = '<p>Koniec gry<p>';
             setScore();
         }
         console.log(moves);
@@ -94,8 +134,15 @@ function whichOne(nr) {
         moves++;
     }
     else {
-        document.getElementById('board').innerHTML = '<h1 class="remis">REMIS!</h1>';
-        document.querySelector('#whos-turn').innerHTML = '<p>Koniec gry<p>';
+        if(!lang) {
+            document.getElementById('board').innerHTML = '<h1 class="remis">DRAW!</h1>';
+            document.querySelector('#whos-turn').innerHTML = '<p>Game over<p>';
+        }
+        else {
+            document.getElementById('board').innerHTML = '<h1 class="remis">REMIS!</h1>';
+            document.querySelector('#whos-turn').innerHTML = '<p>Koniec gry<p>';
+        }
+        
     }
     
 }
@@ -115,15 +162,23 @@ function isWin() {
     //console.log(endGame, yourTurn);
     return endGame;
 }
+
 function setScore() {
     document.getElementById('o-wins').innerHTML = oWins;
     document.getElementById('x-wins').innerHTML = xWins;
 }
+
 function restart() {
     setBoard();
     document.querySelector('.o-border').style.borderBottom = "1px solid #cbcbcb";
     document.querySelector('.x-border').style.borderBottom = "1px solid #cbcbcb";
-    document.querySelector('#whos-turn').innerHTML = '<p>Rozpocznij grę lub wybierz gracza</p>';
+    if(!lang) {
+        document.querySelector('#whos-turn').innerHTML = '<p>Start the game or choose player</p>';
+    }
+    else {
+        document.querySelector('#whos-turn').innerHTML = '<p>Rozpocznij grę lub wybierz gracza</p>';
+    }
+    
     yourTurn = false;
 	endGame = 0;
     moves = 0;
