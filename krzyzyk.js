@@ -71,10 +71,14 @@ function whichOne(nr) {
     if(moves < 8) {
         var turn = "";
         if(!lang){
-            turn = '<p>Your turn: <strong>o</strong></p>';
+            if(yourTurn)
+                turn = '<p>Your turn: <strong>x</strong></p>';
+            else turn = '<p>Your turn: <strong>o</strong></p>';
         }
         else {
-            turn = '<p>Teraz ruch ma: <strong>o</strong></p>';
+            if(yourTurn)
+                turn = '<p>Teraz ruch ma: <strong>x</strong></p>';
+            else turn = '<p>Teraz ruch ma: <strong>o</strong></p>';
         }
         
         if(!yourTurn){
