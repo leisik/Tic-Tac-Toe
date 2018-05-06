@@ -85,16 +85,16 @@ body {
 .board-wrapper {
     width: 100%;
     background-color: #14bdac;
-    min-height: 370px;
+    min-height: 320px;
     padding-top: 0;
 }
 #board {
-    padding: 2rem;
+    padding-top: 2rem;
     margin-bottom: 0.75rem;
 }
 .pole-gry {
-    width: 100px;
-    height: 100px;
+    width: 85px;
+    height: 85px;
     border: 3px solid #09a192;
     display: inline-block;
     font-size: 100px;
@@ -234,4 +234,17 @@ h1#wygrany {
         border-radius: 10%;
         float: left;
     }
+}
+@media (min-width: 400px) {
+    .pole-gry {
+        width: 100px;
+        height: 100px;
+    }
+    .board-wrapper {
+        width: 100%;
+        background-color: #14bdac;
+        min-height: 370px;
+        padding-top: 0;
+    }
+    
 }
