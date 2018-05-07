@@ -165,12 +165,12 @@ h1.koniec, h1.remis {
     color: #555;
 }
 h1.koniec{
-    margin-top: 80px;
+    margin-top: 50px;
     margin-bottom: 10px;
 }
 h1.remis {
     margin: 0;
-    padding: 123px;
+    padding: 100px;
 }
 h1#wygrany {
     font-size: 9rem;
@@ -255,4 +255,7 @@ h1#wygrany {
         font-size: 85px;
         color: #faebd3;
     }
+	h1.koniec{
+		margin-top: 80px;
+	}
 }
