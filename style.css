@@ -72,11 +72,11 @@ body {
 }
 .tag-x{
     color: #555;
-    font-size: 110px;
+    font-size: 90px;
 }
 .tag-o{
-    top: -28px;
-    font-size: 85px;
+    top: -35px;
+    font-size: 75px;
     color: #faebd3;
 }
 /*--------------------
@@ -246,5 +246,13 @@ h1#wygrany {
         min-height: 370px;
         padding-top: 0;
     }
-    
+    .tag-x{
+        color: #555;
+        font-size: 110px;
+    }
+    .tag-o{
+        top: -28px;
+        font-size: 85px;
+        color: #faebd3;
+    }
 }
